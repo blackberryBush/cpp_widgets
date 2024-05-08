@@ -1,0 +1,15 @@
+QPushButton {
+    background-color: black;
+    border: 0px;
+    color: white;
+}
+
+QLabel {
+    background-color: black;
+    border: 0px;
+    color: white;
+}
+
+QMainWindow {
+    background-color: rgb(100, 100, 100);
+}
