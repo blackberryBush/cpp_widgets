@@ -59,17 +59,23 @@ void MainWindow::openConvertorWidget() {
 void MainWindow::openCalendarWidget() {
     Widget *calendarWidget = new Widget();
 
-    // Открытие файла стилей
-    // QFile file("styles.qss");
-    QFile file("../../Calendar/styles.qss");
+    QString styleSheet =
+        "QPushButton {"
+        "    background-color: black;"
+        "    border: 0px;"
+        "    color: white;"
+        "}"
+        "QLabel {"
+        "    background-color: black;"
+        "    border: 0px;"
+        "    color: white;"
+        "}"
+        "QMainWindow {"
+        "    background-color: rgb(100, 100, 100);"
+        "}";
 
-    if (!file.open(QFile::ReadOnly | QFile::Text)) qDebug() << "Couldn't open stylesheet file";
-    else {
-        QTextStream in(&file);
-        QString styleSheet = in.readAll();
-        calendarWidget->setStyleSheet(styleSheet);
-    }
-
+    calendarWidget->setStyleSheet(styleSheet);
+    calendarWidget->setFixedSize(452,758);
     calendarWidget->show();
 }
 

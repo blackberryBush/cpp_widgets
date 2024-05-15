@@ -36,5 +36,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     Calendar/resourses.qrc
 
-DISTFILES += \
-    Calendar/styles.qss
+DISTFILES +=
