@@ -24,7 +24,7 @@ public:
 private slots:
 
     void onButtonClicked();
-
+    void closeWidget();
 
 private:
     Ui::Widget *ui;

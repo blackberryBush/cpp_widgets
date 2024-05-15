@@ -76,6 +76,7 @@ void MainWindow::openCalendarWidget() {
 
     calendarWidget->setStyleSheet(styleSheet);
     calendarWidget->setFixedSize(452,758);
+    calendarWidget->setWindowFlags(Qt::FramelessWindowHint);
     calendarWidget->show();
 }
 
