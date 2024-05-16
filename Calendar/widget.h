@@ -21,13 +21,14 @@ public:
     void saveButtonDataToJson(const QString &filename);
     void buttonTextChanged(QPushButton *button, const QString &text);
     void loadButtonDataFromJson(const QString &filename);
+
 private slots:
-
     void onButtonClicked();
-
+    void closeWidget();
 
 private:
     Ui::Widget *ui;
     QMap<QPushButton*, QString> buttonTextMap;
+
 };
 #endif // WIDGET_H

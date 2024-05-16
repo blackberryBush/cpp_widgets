@@ -45,7 +45,7 @@ Widget::Widget(QWidget *parent)
         }
     }
 
-    connect(ui->corner_button, &QPushButton::clicked, this, &Widget::onButtonClicked);
+    connect(ui->corner_button, &QPushButton::clicked, this, &Widget::closeWidget);
 
     // Загрузка данных о кнопках из файла при запуске приложения
     loadButtonDataFromJson("button_data.json");
@@ -76,6 +76,7 @@ void Widget::buttonTextChanged(QPushButton *button, const QString &text)
     if (button) {
         buttonTextMap[button] = text; // Обновляем контейнер
     }
+    saveButtonDataToJson("button_data.json");
 }
 
 void Widget::saveButtonDataToJson(const QString &filename)
@@ -119,4 +120,9 @@ void Widget::loadButtonDataFromJson(const QString &filename)
             }
         }
     }
+}
+
+void Widget::closeWidget()
+{
+    close(); // Метод close() закрывает текущее окно виджета
 }
